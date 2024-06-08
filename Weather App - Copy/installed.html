@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light theme background color */
+            color: #343a40; /* Light theme text color */
+        }
+
+        /* Dark theme styles */
+        body.dark-theme {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .technologies {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .technologies li {
+            margin-bottom: 10px;
+        }
+
+        .technologies li strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <div class="container">
+        <h1>Weather App Information</h1>
+
+        <p>The Weather App is built using the following technologies and techniques:</p>
+
+        <ul class="technologies">
+            <li>
+                <strong>HTML5:</strong> Used for structuring the content and layout of the web page.
+            </li>
+            <li>
+                <strong>CSS3:</strong> Employed for styling the elements and creating a visually appealing design.
+            </li>
+            <li>
+                <strong>Bootstrap 4:</strong> Integrated Bootstrap framework for responsive layout, components, and utilities.
+            </li>
+            <li>
+                <strong>JavaScript:</strong> Utilized JavaScript for dynamic functionality such as fetching weather data, error handling, and theme toggling.
+            </li>
+            <li>
+                <strong>OpenWeatherMap API:</strong> Accessed OpenWeatherMap API to retrieve live weather data based on user input.
+            </li>
+            <li>
+                <strong>Responsive Design:</strong> Implemented responsive design techniques to ensure optimal viewing experience across various devices and screen sizes.
+            </li>
+            <li>
+                <strong>Modern Flat-Style Toggle Switch:</strong> Used a modern flat-style toggle switch for toggling between light and dark themes, enhancing user experience.
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById('theme-toggle').addEventListener('change', function () {
+            var body = document.body;
+            body.classList.toggle('dark-theme');
+        });
+    </script>
+</body>
+</html>
