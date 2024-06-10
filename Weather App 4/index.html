@@ -32,6 +32,24 @@
                         <a class="nav-link" href="installed.html">Installed</a>
                     </li>
                 </ul>
+                <div class="language-selector">
+                    <label for="language">Choose Language:</label>
+                    <select id="language">
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                        <option value="bn">Bengali</option>
+                        <option value="te">Telugu</option>
+                        <option value="mr">Marathi</option>
+                        <option value="ta">Tamil</option>
+                        <option value="ur">Urdu</option>
+                        <option value="gu">Gujarati</option>
+                        <option value="kn">Kannada</option>
+                        <option value="ml">Malayalam</option>
+                        <option value="or">Odia</option>
+                        <option value="pa">Punjabi</option>
+                        <option value="as">Assamese</option>
+                    </select>
+                </div>
                 <div class="ml-auto d-flex align-items-center">
                     <label class="switch">
                         <input type="checkbox" id="theme-toggle">
@@ -41,16 +59,15 @@
             </div>
         </nav>
     </header>
-
     <div class="card">
         <div class="search">
             <input type="text" placeholder="Enter The City name" spellcheck="false">
             <button id="search-btn"><img src="images/search.png" alt="Search"></button>
+            <button id="voice-btn"><img src="images/voice.png" alt="Voice Search"></button>
         </div>
         <div class="error" style="display: none;">
             <p>Invalid City Name <span>&#128517;</span></p>
         </div>
-
         <div class="weather" style="display: none;">
             <img src="images/rain.png" class="weather-icon" alt="Weather Icon">
             <h1 class="temp"><span>&#8451;</span></h1>
@@ -108,14 +125,12 @@
             </div>
         </div>
     </div>
-
     <div class="card">
         <div class="hourly-forecast" style="display: none;">
             <h3>Hourly Forecast</h3>
             <div class="hourly-container"></div>
         </div>        
     </div>
-
     <div class="card">
         <div class="forecast">
             <h2>5-Day Forecast</h2>

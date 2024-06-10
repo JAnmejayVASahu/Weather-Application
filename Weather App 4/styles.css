@@ -46,6 +46,40 @@ body.dark-theme {
 .navbar-dark .navbar-nav .nav-link {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 }
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    margin-left: 20px; /* Adjust spacing as needed */
+}
+
+.language-selector label {
+    font-size: 16px;
+    margin-right: 10px; /* Space between label and dropdown */
+    color: inherit; /* Inherit the text color based on theme */
+}
+
+.language-selector select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd; /* Light border color */
+    background-color: #f8f9fa; /* Light background color */
+    color: #555; /* Text color */
+    outline: none;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for theme changes */
+}
+
+body.light-theme .language-selector select {
+    background-color: #f8f9fa; /* Light theme background */
+    color: #555; /* Light theme text color */
+}
+
+body.dark-theme .language-selector select {
+    background-color: #343a40; /* Dark theme background */
+    color: #fff; /* Dark theme text color */
+    border-color: #555; /* Dark theme border color */
+}
 /* Toggle Switch */
 .switch {
     position: relative;
