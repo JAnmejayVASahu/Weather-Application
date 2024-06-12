@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App Features</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light theme background color */
+            color: #343a40; /* Light theme text color */
+        }
+        
+        /* Dark theme styles */
+        body.dark-theme {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive navbar styles */
+        .navbar {
+            background-color: #ffffff; /* Light theme navbar background color */
+            padding: 10px;
+            border-bottom: 1px solid #dee2e6;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #343a40; /* Light theme navbar text color */
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            background-color: #e9ecef;
+        }
+
+        /* Dark theme navbar styles */
+        .navbar.dark-theme {
+            background-color: #343a40;
+            color: #ffffff; /* Dark theme navbar text color */
+        }
+
+        .navbar.dark-theme a:hover {
+            background-color: #4e545b;
+        }
+
+        .theme-toggle {
+            float: right;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        /* Features list styles */
+        .features {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .features li {
+            margin-bottom: 20px;
+        }
+
+        .features li strong {
+            font-weight: bold;
+        }
+
+        .features li em {
+            font-style: italic;
+        }
+
+        .features li u {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <div class="container">
+        <h1>Weather App Features</h1>
+
+        <nav class="navbar">
+            <div>
+                <a href="index.html" class="active">Home</a>
+                <a href="#">Features</a>
+                <a href="#">Installed</a>
+            </div>
+            <i class="ri-contrast-2-fill theme-toggle"></i>
+        </nav>
+
+        <ul class="features">
+            <li>
+                <strong>Responsive Navbar:</strong>
+                <em>The navbar includes a logo and navigation links for Home, Features, and Installed sections. The navbar is fully responsive, adapting to various screen sizes and ensuring a seamless user experience on both mobile and desktop devices. A theme toggle switch is available for users to switch between light and dark themes.</em>
+            </li>
+            <li>
+                <strong>Theme Toggle Switch:</strong>
+                <em>Users can switch between light and dark themes using a modern flat-style toggle switch. In light theme mode, the toggle switch is green, and in dark theme mode, it changes to blue. The entire page, including the navbar and text, adjusts its color scheme based on the selected theme.</em>
+            </li>
+            <li>
+                <strong>Search Functionality:</strong>
+                <em>The search bar allows users to enter the name of any city to fetch the current weather data. A search button is provided next to the input field for initiating the weather search.</em>
+            </li>
+            <li>
+                <strong>Weather Information Display:</strong>
+                <em>Upon entering a valid city name, the app displays the current weather conditions including temperature, humidity, and wind speed. The temperature is shown in degrees Celsius (°C). Weather conditions are visually represented with corresponding icons (e.g., clouds, clear sky, rain, drizzle, mist, snow).</em>
+            </li>
+            <li>
+                <strong>Error Handling:</strong>
+                <em>If an invalid city name is entered, an error message is displayed indicating that the city name is invalid.</em>
+            </li>
+            <li>
+                <strong>Live Weather Updates:</strong>
+                <em>The app fetches live weather data from the OpenWeatherMap API, ensuring that users receive the most up-to-date information. Weather icons dynamically change based on the current weather conditions in the searched city.</em>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        document.querySelector('.theme-toggle').addEventListener('click', function () {
+            var body = document.body;
+            body.classList.toggle('dark-theme');
+        });
+    </script>
+</body>
+</html>
