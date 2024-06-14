@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body class="light-theme">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="logo">
+                <img src="images/Code Hub.jpg" alt="Logo">
+            </div>
+            <a class="navbar-brand" href="index.html">Weather App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="installed.html">Installed</a>
+                    </li>
+                </ul>
+                <div class="language-selector">
+                    <label for="language">Choose Language:</label>
+                    <select id="language">
+                        <option value="en">English</option>
+                        <!-- Add other language options here -->
+                    </select>
+                </div>
+                <div class="ml-auto d-flex align-items-center">
+                    <label class="switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="Enter The City name" spellcheck="false">
+            <button id="search-btn"><img src="images/search.png" alt="Search"></button>
+            <button id="voice-btn"><img src="images/microphone.png" alt="Voice Search"></button>
+        </div>
+        <div class="voice-search">
+            <div id="voice-status" style="display: none;">Listening...</div>
+        </div>
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn">&times;</span>
+                <p>Listening for your city name...</p>
+                <div class="microphone-container">
+                    <img src="images/voice.png" alt="Microphone" class="microphone-icon">
+                    <div class="wave-animation"></div>
+                </div>
+            </div>
+        </div>
+        <div class="error" style="display: none;">
+            <p>Invalid City Name <span>&#128517;</span></p>
+        </div>
+        <div id="map" style="height: 500px;"></div>
+        <div class="weather" style="display: none;">
+            <img src="images/rain.png" class="weather-icon" alt="Weather Icon">
+            <h1 class="temp"><span>&#8451;</span></h1>
+            <h2 class="city">City Name</h2>
+            <button id="add-favorite-btn" class="btn btn-primary">Add to Favorites</button>
+            <div class="details">
+                <div class="col">
+                    <img src="images/humidity.png" alt="Humidity Icon">
+                    <div>
+                        <div class="humidity"></div>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/wind.png" alt="Wind Icon">
+                    <div>
+                        <div class="wind"></div>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/pressure.png" alt="Pressure Icon">
+                    <div>
+                        <div class="pressure"></div>
+                        <p>Pressure</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/uv.png" alt="UV Index Icon">
+                    <div>
+                        <div class="uv-index"></div>
+                        <p>UV Index</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/visibility.png" alt="Visibility Icon">
+                    <div>
+                        <div class="visibility"></div>
+                        <p>Visibility</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/sunrise.png" alt="Sunrise Icon">
+                    <div>
+                        <div class="sunrise"></div>
+                        <p>Sunrise</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/sunset.png" alt="Sunset Icon">
+                    <div>
+                        <div class="sunset"></div>
+                        <p>Sunset</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/air-quality.png" alt="AQI Icon">
+                    <div>
+                        <div class="aqi"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="hourly-forecast">
+            <h3>Hourly Forecast</h3>
+            <div class="hourly-container"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="forecast">
+            <h2>5-Day Forecast</h2>
+            <div class="forecast-container"></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="favorites">
+            <h3>Favorite Locations</h3>
+            <ul id="favorites-list"></ul>
+        </div>
+    </div>
+
+    <script src="/Public/Script/app.js"></script>
+    <script src="/Public/Script/favorites.js"></script>
+    <script src="/Public/Script/news.js"></script>
+</body>
+</html>
